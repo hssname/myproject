@@ -1,0 +1,63 @@
+html, body, div, ul, li, h1, h2, h3, h4, h5, h6, p, dl, dt, dd, ol, form, input, textarea, th, td, select {
+  margin: 0;
+  padding: 0;
+}
+
+*{box-sizing: border-box;}
+
+html, body {
+  min-height: 100%;
+}
+
+body {
+  font-family: "微软雅黑";
+  font-size:14px;
+  color:#333;
+}
+h1, h2, h3, h4, h5, h6{font-weight:normal;}
+ul,ol {
+  list-style: none;
+}
+
+i {
+  font-style: normal;
+}
+
+img {
+  border: none;
+  vertical-align: middle;
+}
+
+input, textarea {
+  outline: none;
+  border: none;
+}
+
+textarea {
+  resize: none;
+  overflow: auto;
+}
+
+a {
+  text-decoration: none;
+  color: #232323;
+}
+
+.ellipse {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.text_shadow {
+  text-shadow: 0 0 .8rem #51ffff;
+}
+
+html, body {
+  height: 100%;
+  /*overflow: hidden;*/
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
