@@ -149,3 +149,37 @@ export const getFileType = fileName => {
     return require('@/assets/images/other@2x.png');
   }
 }
+
+
+/**
+ * 深度复制  避免实体感染
+ * @param source
+ * @returns {[]|{}}
+ */
+export const deepClone = (source) => {
+  if (!source && typeof source !== 'object') {
+    throw new Error('error arguments', 'deepClone')
+  }
+  const targetObj = source.constructor === Array ? [] : {}
+  Object.keys(source).forEach(keys => {
+    if (source[keys] && typeof source[keys] === 'object') {
+      targetObj[keys] = deepClone(source[keys])
+    } else {
+      targetObj[keys] = source[keys]
+    }
+  })
+  return targetObj
+}
+
+/**
+ * 通过路劲 获取文件格式
+ * @param path
+ * @param endsWith()方法和startsWith()方法的语法都是一样的，不过endsWith()方法是从字符串的末尾开始查找。
+ * @returns {number}
+ */
+export const getFileTypebyExtName = (path) => {
+  let type = -1
+  if (path.endsWith('png') || path.endsWith('jpg') || path.endsWith('jpeg') || path.endsWith('gif') || path.endsWith('bmp') || path.endsWith('webp')) type = 0    //图片
+  if (path.endsWith('mp4') || path.endsWith('avi') || path.endsWith('rm') || path.endsWith('rmvb') || path.endsWith('3gp') || path.endsWith('dmv')) type = 1    //视频
+  return type
+}
