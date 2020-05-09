@@ -580,3 +580,58 @@ html, body {
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
 }
+/* 带三角形消息框 */
+.box_right {
+    position: relative;
+    padding: 10px 20px;
+    background: white;
+    border-radius: 3px;
+    text-align: center;
+  }
+
+.box_right:after {
+  content: '';
+  position: absolute;
+  right: -19px;
+  top: 16px;
+  border: 10px solid transparent;
+  border-left-color: white;
+}
+
+.box_right:before {
+  content: '';
+  position: absolute;
+  right: -20px;
+  top: 15px;
+  border: 10px solid transparent;
+  border-left-color: white;
+}
+
+.box_left {
+  position: relative;
+  padding: 10px 20px;
+  background: white;
+  border: 1px solid white;
+  border-radius: 3px;
+  text-align: center;
+}
+
+.box_left:before {
+  content: "";
+  position: absolute;
+  left: -20px;
+  top: 50%;
+  margin-top: -10px;
+  border: 10px solid transparent;
+  border-right-color: white;
+}
+
+.box_left:after {
+  content: "";
+  position: absolute;
+  left: -19px;
+  top: 50%;
+  margin-top: -10px;
+  border: 10px solid transparent;
+  border-right-color: white
+}
