@@ -12,4 +12,12 @@ export default [
       title: '工作台'
     }
   },
+  {
+    path: '/chatRoom',
+    name: 'chatRoom',
+    component: () => import(/* webpackChunkName: "chatRoom" */ '../../views/chatRoom.vue'),
+    meta: {
+      title: '聊天室'
+    }
+  },
 ]

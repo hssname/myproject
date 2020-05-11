@@ -77,6 +77,10 @@
         default: () => false
       }
     },
+    model: {
+      prop: 'value',
+      event: 'change'
+    },
     computed: {
       setStyle() {
         const padding = this.padding.replace(/,/g, 'px ') + 'px';

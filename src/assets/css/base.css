@@ -55,10 +55,13 @@ a {
 html, body {
   height: 100%;
 }
-.overflow
-  /* flex布局 */
+.overflow {
+  overflow: hidden;
+}
+/* flex布局 */
+
 .flex {
-  display: flex;
+ display: flex;
 }
 .flex-align{
   align-items: center;
@@ -111,6 +114,12 @@ html, body {
 
 .padding-5 {
   padding: 5px;
+}
+.padding-10 {
+  padding: 10px;
+}
+.padding-15 {
+  padding: 15px;
 }
 .padding-lr-5 {
   padding-left: 5px;
@@ -500,6 +509,9 @@ html, body {
 .bg_white_e7e7e8 {
   background: #e7e7e8;
 }
+.bg_white_f8f9fb {
+   background: #f8f9fb;
+ }
 
 /*border 边框*/
 .border_radius_2 {
@@ -533,7 +545,9 @@ html, body {
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE 10+ */
 }
-
+::-webkit-scrollbar {
+  display: none; /* Chrome Safari */
+}
 /*透明度*/
 
 .opacity0_3 {
