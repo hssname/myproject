@@ -183,3 +183,33 @@ export const getFileTypebyExtName = (path) => {
   if (path.endsWith('mp4') || path.endsWith('avi') || path.endsWith('rm') || path.endsWith('rmvb') || path.endsWith('3gp') || path.endsWith('dmv')) type = 1    //视频
   return type
 }
+/**
+ * 毫秒转换友好的显示格式
+ * 输出格式：今天的   返回 09:01 其他返回默认值
+ */
+export const friendTime = (d) => {
+  //获取js 时间戳
+  let now = new Date()
+  let date = new Date(d)
+  if (now.getFullYear() === date.getFullYear() && now.getMonth() === date.getMonth() && now.getDate() === date.getDate()) {
+    //一天之类
+    return (date.getHours() < 10 ? '0' + date.getHours() : date.getHours()) + ':' + (date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes())
+  } else {
+    return d
+  }
+}
+
+/**
+ * 判断各种null
+ * @param title
+ */
+export const isNull = (exp) => {
+  return !exp || exp == null || exp == '' || typeof (exp) == undefined
+}
+/**
+ * 判断各种null
+ * @param title
+ */
+export const isNotNull = (exp) => {
+  return !isNull(exp)
+}
