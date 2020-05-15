@@ -10,18 +10,20 @@
             </div>
             <div class="flex" :class="isSelf(item)?'flex-h-end':''">
               <img :src="item.headUrl" v-if="!isSelf(item)"
-                        class="width_35px height_35px margin-r-10 margin-t-5" />
+                   class="width_35px height_35px margin-r-10 margin-t-5"/>
               <div class="flex-v flex    ">
                 <div class="flex" :class="isSelf(item)?'flex-h-end text-right':''">
                   <!--  是自己   私信放前面-->
                   <template v-if="+item.isPersonalMsg===1&&isSelf(item)">
-                    <span class="font-12  bg_yellow_ec6439   font-5 border_radius_2 padding-tb-2  text-center padding-lr-5 color-white margin-r-10">{{item.messageBody.isRecive?'回复私信':'私信'}}</span>
+                    <span
+                      class="font-12  bg_yellow_ec6439   font-5 border_radius_2 padding-tb-2  text-center padding-lr-5 color-white margin-r-10">{{item.messageBody.isRecive?'回复私信':'私信'}}</span>
                   </template>
                   <p class="font-14 color-66 margin-r-10" v-if="notNull(getLittleTitle(item))">
                     {{getLittleTitle(item)}}</p>
                   <p class="font-14  color-33 ">{{item.sendMemName}}</p>
                   <template v-if="+item.isPersonalMsg===1&&!isSelf(item)">
-                    <span class=" font-12 bg_yellow_ec6439 font-5   border_radius_2 padding-tb-2  text-center padding-lr-5 color-white margin-l-10">{{item.messageBody.isRecive?'回复私信':'私信'}}</span>
+                    <span
+                      class=" font-12 bg_yellow_ec6439 font-5   border_radius_2 padding-tb-2  text-center padding-lr-5 color-white margin-l-10">{{item.messageBody.isRecive?'回复私信':'私信'}}</span>
                     <img src="@/assets/images/reply.png" class="width_20px width_20px margin-l-10"
                          @click="replayMsg(item)">
                   </template>
@@ -46,12 +48,12 @@
                       <template v-if="notNull(item.messageBody.value)">
                         <img v-for="img in item.messageBody.value "
                              :key="img"
-                              class="width_150px margin-l-10"
-                              :src="img" />
+                             class="width_150px margin-l-10"
+                             :src="img"/>
                       </template>
-                    <img v-else
-                         class="width_150px"
-                         :src="item.messageBody"/>
+                      <img v-else
+                           class="width_150px"
+                           :src="item.messageBody"/>
                     </div>
 
                     <!--messageType===3 语音 ************************************************************************************* -->
@@ -87,10 +89,10 @@
                            @click="!file.hasFile?preViewIm(file.imgs):showSeeFileDetailDialo(file.imgs,item)"
                            v-for="(file,fileIndex) in item.messageBody.files" :key="fileIndex">
                         <img v-if="file.hasFile"
-                                  class="width_25px height_30px"
-                                  :src="require('@/assets/images/pdf@2x.png')" />
+                             class="width_25px height_30px"
+                             :src="require('@/assets/images/pdf@2x.png')"/>
                         <img v-else class="width_25px height_25px" ref="el_im6"
-                                  :src="require('@/assets/images/icon-img.png')"
+                             :src="require('@/assets/images/icon-img.png')"
                         />
                         <div class="flex flex-v margin-l-20 ">
                           <p class="font-14 color-blue_108ee9">查看{{file.tip}}详情</p>
@@ -135,10 +137,10 @@
                              class="width_25px height_25px"
                              src="@/assets/images/pdf@2x.png">
                         <img v-if="file.imgs&&file.imgs.length>0"
-                                  class="width_25px height_25px"
-                                  ref="el_im8"
-                                  :src="require('@/assets/images/icon_slice1.png')"
-                                  @click="preViewIm(file.imgs)" />
+                             class="width_25px height_25px"
+                             ref="el_im8"
+                             :src="require('@/assets/images/icon_slice1.png')"
+                             @click="preViewIm(file.imgs)"/>
                         <p class="font-14 margin-lr-15 color-blue_108ee9 width_120px"
                            v-if="notNull(file.fileList)">{{file.fileList[0].name}}</p>
                         <p class="font-14 margin-lr-15 color-blue_108ee9 width_120px"
@@ -153,20 +155,20 @@
 
                     <!--messageType===10   文件 ************************************************************************************* -->
                     <div v-if="+item.messageType===10">
-                    <div class="flex flex-v-c"
-                         v-for="(file,fileIndex) in item.messageBody.value" :key="fileIndex">
-                      <div class="flex flex-v-c" :class="fileIndex!==0?'margin-tb-10 border_top_1':''"
-                           @click="windowopen(file.Location,item.id)">
-                        <img
-                          class="width_25px height_30px"
-                          :src="require('@/assets/images/pdf@2x.png')" />
-                        <div class="flex flex-v">
-                          <p class="font-14 margin-lr-15 color-blue_108ee9 width_120px line4">
-                            {{file.name}}</p>
-                          <p class="font-5 color-99 margin-t-5">建议使用WIFI情况下查看</p>
+                      <div class="flex flex-v-c"
+                           v-for="(file,fileIndex) in item.messageBody.value" :key="fileIndex">
+                        <div class="flex flex-v-c" :class="fileIndex!==0?'margin-tb-10 border_top_1':''"
+                             @click="windowopen(file.Location,item.id)">
+                          <img
+                            class="width_25px height_30px"
+                            :src="require('@/assets/images/pdf@2x.png')"/>
+                          <div class="flex flex-v">
+                            <p class="font-14 margin-lr-15 color-blue_108ee9 width_120px line4">
+                              {{file.name}}</p>
+                            <p class="font-5 color-99 margin-t-5">建议使用WIFI情况下查看</p>
+                          </div>
                         </div>
                       </div>
-                    </div>
                     </div>
                     <!--messageType===16   文书 messageType===17  调解协议 ************************************************************************************* -->
                     <div class="flex flex-v-c" v-if="+item.messageType===16||+item.messageType===17">
@@ -176,9 +178,9 @@
                              class="width_25px height_25px"
                              src="@/assets/images/pdf@2x.png">
                         <img v-else
-                                  class="width_25px height_25px"
-                                  ref="el_im8"
-                                  :src="require('@/assets/images/icon_slice1.png')"
+                             class="width_25px height_25px"
+                             ref="el_im8"
+                             :src="require('@/assets/images/icon_slice1.png')"
                         />
                         <div class="flex flex-v  ">
                           <p class="font-14 margin-lr-15 color-blue_108ee9 width_120px">
@@ -193,54 +195,55 @@
 
 
                     <!--messageType===2018 多方视频 ************************************************************************************* -->
-                   <!-- <div class="flex" v-if="+item.messageType===2018" @click="goMultipartyVideo">
-                      <img src="@/assets/images/law.png">
-                      <div class="flex flex-v  margin-l-10 flex-h-c">
-                        <p class="font-14">邀请人员进行多方视频</p>
-                        <p class="font-14 text-left ">
-                          参与人员：{{item.messageBody.sendPeopleName.join(',')}}</p>
-                      </div>
-                    </div>-->
+                    <!-- <div class="flex" v-if="+item.messageType===2018" @click="goMultipartyVideo">
+                       <img src="@/assets/images/law.png">
+                       <div class="flex flex-v  margin-l-10 flex-h-c">
+                         <p class="font-14">邀请人员进行多方视频</p>
+                         <p class="font-14 text-left ">
+                           参与人员：{{item.messageBody.sendPeopleName.join(',')}}</p>
+                       </div>
+                     </div>-->
 
                     <!--messageType===2019 庭审会议 ************************************************************************************* -->
-                   <!-- <div class="flex flex-v" v-if="+item.messageType===2019" @click="getmeeting(item)">
-                      <div class="flex">
-                        <img src="@/assets/images/ic_meeting.png" class="width_25px height_25px">
-                        <p class="font-14 color-00 margin-l-10"> {{item.messageBody.meetingType ==
-                          '0'?'庭审会议':'调解会议'}}</p>
-                        <p class="font-14  margin-l-10 flex-1 text-right"
-                           :class="+item.meetingStatus===2?'color-99':'color-blue_108ee9'">
-                          {{+item.meetingStatus!==2?'立即进入':'已结束'}}</p>
-                      </div>
-                      <p class="font-15 font-blod border_top_1 margin-t-10 padding-t-8">预约时间<span
-                        class="font-14 color-66 margin-l-10">{{item.messageBody.meetingTime}}</span>
-                      </p>
-                      <p class="font-14 color-66 margin-t-5 text-left">
-                        {{item.messageBody.content}}</p>
-                    </div>-->
+                    <!-- <div class="flex flex-v" v-if="+item.messageType===2019" @click="getmeeting(item)">
+                       <div class="flex">
+                         <img src="@/assets/images/ic_meeting.png" class="width_25px height_25px">
+                         <p class="font-14 color-00 margin-l-10"> {{item.messageBody.meetingType ==
+                           '0'?'庭审会议':'调解会议'}}</p>
+                         <p class="font-14  margin-l-10 flex-1 text-right"
+                            :class="+item.meetingStatus===2?'color-99':'color-blue_108ee9'">
+                           {{+item.meetingStatus!==2?'立即进入':'已结束'}}</p>
+                       </div>
+                       <p class="font-15 font-blod border_top_1 margin-t-10 padding-t-8">预约时间<span
+                         class="font-14 color-66 margin-l-10">{{item.messageBody.meetingTime}}</span>
+                       </p>
+                       <p class="font-14 color-66 margin-t-5 text-left">
+                         {{item.messageBody.content}}</p>
+                     </div>-->
 
                     <!--messageType===2020  庭审会议那边传过来的文书 ************************************************************************************* -->
-                   <!-- <div class="flex flex-v-c" v-if="+item.messageType===2020">
-                      <div class="flex flex-v-c padding-tb-8"
-                           @click="windowopen(item.messageBody.content[0],item.id)">
-                        <img
-                          class="width_25px height_25px"
-                          src="@/assets/images/pdf@2x.png">
-                        <p class="font-14 margin-lr-15 color-blue_108ee9 width_120px line4">
-                          {{item.messageBody.fileType}}</p>
-                        <p class="font-14 border-left_1_gray  padding-l-10 color-blue_108ee9">查看</p>
-                      </div>
-                    </div>-->
+                    <!-- <div class="flex flex-v-c" v-if="+item.messageType===2020">
+                       <div class="flex flex-v-c padding-tb-8"
+                            @click="windowopen(item.messageBody.content[0],item.id)">
+                         <img
+                           class="width_25px height_25px"
+                           src="@/assets/images/pdf@2x.png">
+                         <p class="font-14 margin-lr-15 color-blue_108ee9 width_120px line4">
+                           {{item.messageBody.fileType}}</p>
+                         <p class="font-14 border-left_1_gray  padding-l-10 color-blue_108ee9">查看</p>
+                       </div>
+                     </div>-->
                   </div>
                   <div v-if="item.sendMemIdentityId!= loginUserInfo.identityId" class="flex-1"></div>
                   <!-- 为了上div宽度自适应-->
                 </div>
               </div>
               <img :src="item.headUrl" v-if="isSelf(item)"
-                        class="width_35px height_35px margin-l-10 margin-t-5" />
+                   class="width_35px height_35px margin-l-10 margin-t-5"/>
             </div>
           </div>
         </div>
+        <div class="margin-t-10 margin-l-10" @click="recStart" style="cursor: pointer">录音</div>
       </div>
       <div class="flex-2 border-left_1_gray padding-lr-10 bg-white">
         <div class="border_bottom_1 padding-b-10">
@@ -260,6 +263,10 @@
 </template>
 
 <script>
+  import Recorder from 'recorder-core'
+  import 'recorder-core/src/engine/mp3'
+  import 'recorder-core/src/engine/mp3-engine'
+  const audioContext = new (window.AudioContext || window.webk)
   // import BaseInput from '../baseComponents/BaseInput/BaseInput'
   import { friendTime, isNotNull } from '../util/util'
 
@@ -311,63 +318,89 @@
         ],//当事人人员集合  type<10
         newsList: [
           {
-          id: '5eb8acc428d9f0000cdb2d2c',
-          caseId: '48536587-fa80-4eba-9447-218e3f938fa1',
-          sendMemOpenid: 'o-c7U5DQ4kABz6ujE7YnZcVlYH3g',
-          sendMemName: '郭秀竹',
-          sendMemRole: '11',
-          roleName: '仲裁员',
-          juris: [{
-            openid: 'o-c7U5AYAxBEjeOhq2CkDGotjN1g',
-            type: '7',
-            name: '宋欣芳',
-            superName: '北京百度',
-            superOpenid: 'null',
-            setIdentAddCaseId: null,
-            identityId: '141025198704260026',
-          }, {
-            openid: 'o-c7U5L1XtOMS4rAobkqVgda8tpQ',
-            type: '3',
-            name: '豆亚南',
-            superName: null,
-            superOpenid: null,
-            setIdentAddCaseId: null,
-            identityId: '412727198910245457',
-          }],
-          messageType: '6',
-          messageBody: {
-            messagePostMem: '吴琼',
-            messagePostIdentity: ['210304198801281613'],
-            files: [
-              {
-                title: '证据',
-                tip: '证据',
-                types: '身份证明',
-                imgs: [
-                  {
-                    Location: 'https://szwzc-1255516392.cos.ap-chengdu.myqcloud.com/files/cf6d74bcce374f97bc684c0467edcd29.jpg',
-                    name: '4.jpg'
-                  }
-                ],
-                hasFile: false,
-              }
-            ],
-            arrChecked: [
-              {
-                id: 71192,
-                name: '吴琼',
-                type: 1,
-                identityId: '210304198801281613',
-                identityType: 1,
-                positionName: '被申请人',
-                position: 3,
-                sequence: 'a4e5c5e79d7d43e4b39b839efc5c08dc',
-                caseId: 751908,
-                phoneId: '15998060431',
-                openid: 'o-c7U5PGLGnvOLqAr2Cno2hDcrRo',
-                agent: [],
-              }
-            ],
+            id: '5eb8acc428d9f0000cdb2d2c',
+            caseId: '48536587-fa80-4eba-9447-218e3f938fa1',
+            sendMemOpenid: 'o-c7U5DQ4kABz6ujE7YnZcVlYH3g',
+            sendMemName: '郭秀竹',
+            sendMemRole: '11',
+            roleName: '仲裁员',
+            juris: [{
+              openid: 'o-c7U5AYAxBEjeOhq2CkDGotjN1g',
+              type: '7',
+              name: '宋欣芳',
+              superName: '北京百度',
+              superOpenid: 'null',
+              setIdentAddCaseId: null,
+              identityId: '141025198704260026',
+            }, {
+              openid: 'o-c7U5L1XtOMS4rAobkqVgda8tpQ',
+              type: '3',
+              name: '豆亚南',
+              superName: null,
+              superOpenid: null,
+              setIdentAddCaseId: null,
+              identityId: '412727198910245457',
+            }],
+            messageType: '6',
+            messageBody: {
+              messagePostMem: '吴琼',
+              messagePostIdentity: ['210304198801281613'],
+              files: [
+                {
+                  title: '证据',
+                  tip: '证据',
+                  types: '身份证明',
+                  imgs: [
+                    {
+                      Location: 'https://szwzc-1255516392.cos.ap-chengdu.myqcloud.com/files/cf6d74bcce374f97bc684c0467edcd29.jpg',
+                      name: '4.jpg'
+                    }
+                  ],
+                  hasFile: false,
+                }
+              ],
+              arrChecked: [
+                {
+                  id: 71192,
+                  name: '吴琼',
+                  type: 1,
+                  identityId: '210304198801281613',
+                  identityType: 1,
+                  positionName: '被申请人',
+                  position: 3,
+                  sequence: 'a4e5c5e79d7d43e4b39b839efc5c08dc',
+                  caseId: 751908,
+                  phoneId: '15998060431',
+                  openid: 'o-c7U5PGLGnvOLqAr2Cno2hDcrRo',
+                  agent: [],
+                }
+              ],
+              identityIds: ['141025198704260026', '412727198910245457', '210304198801281613', '410882199205195522'],
+              sendMemIdentityId: '513030199411243122',
+              sendDate: '2020-05-11 09:39:16',
+              date: null,
+              questionIdent: '1',
+              headUrl: 'https://szwzc-1255516392.cos.ap-chengdu.myqcloud.com/%E4%BB%B2%E8%A3%81%E5%91%98.png',
+              questionType: null,
+              isPersonalMsg: 0,
+              shouldReload: false,
+              groupId: '2516417820368044042',
+              receivers: '',
+              status: true,
+              readIds: ['513030199411243122'],
+              readMemModels: [{
+                name: '郭秀竹',
+                identityId: '513030199411243122',
+                type: '11',
+                readDate: '2020-05-11 09:39:16'
+              }],
+              source: 1,
+              meetingId: null,
+              pcRoomId: null,
+              meetingStatus: null,
+              evidenceName: null,
+              evidenceType: '证据清单',
+            },
             identityIds: ['141025198704260026', '412727198910245457', '210304198801281613', '410882199205195522'],
             sendMemIdentityId: '513030199411243122',
             sendDate: '2020-05-11 09:39:16',
@@ -394,32 +427,6 @@
             evidenceName: null,
             evidenceType: '证据清单',
           },
-          identityIds: ['141025198704260026', '412727198910245457', '210304198801281613', '410882199205195522'],
-          sendMemIdentityId: '513030199411243122',
-          sendDate: '2020-05-11 09:39:16',
-          date: null,
-          questionIdent: '1',
-          headUrl: 'https://szwzc-1255516392.cos.ap-chengdu.myqcloud.com/%E4%BB%B2%E8%A3%81%E5%91%98.png',
-          questionType: null,
-          isPersonalMsg: 0,
-          shouldReload: false,
-          groupId: '2516417820368044042',
-          receivers: '',
-          status: true,
-          readIds: ['513030199411243122'],
-          readMemModels: [{
-            name: '郭秀竹',
-            identityId: '513030199411243122',
-            type: '11',
-            readDate: '2020-05-11 09:39:16'
-          }],
-          source: 1,
-          meetingId: null,
-          pcRoomId: null,
-          meetingStatus: null,
-          evidenceName: null,
-          evidenceType: '证据清单',
-        },
           {
             id: '5eb8acc428d9f0000cdb2d2c',
             caseId: '48536587-fa80-4eba-9447-218e3f938fa1',
@@ -531,17 +538,47 @@
             evidenceType: '证据清单',
           }
         ],
+        rec: 0,
+        isRecording: false,
+        blob: null,
         sendWord: '22',
         winHeight: window.innerHeight,
       }
     },
     methods: {
+      // 开始录音
+      recStart () {
+        this.rec = Recorder({
+          type: 'mp3',
+          bitRate: 16,
+          sampleRate: 16000,
+          onProcess: (buffers, powerLevel, duration, sampleRate) => {
+
+          }
+        })
+        this.rec.open(() => {
+          if (this.rec) {
+            this.rec.start()
+          }
+        }, (msg, isUserNotAllow) => {
+          //用户拒绝未授权或不支持
+          console.log((isUserNotAllow ? 'UserNotAllow，' : '') + '无法录音:' + msg)
+        })
+      },
+      // 结束录音
+      recStop () {
+        this.rec.stop((blob, duration) => {
+          console.log(blob, (window.URL).createObjectURL(blob), '时长:' + duration + 'ms')
+          this.rec.close()//释放录音资源，当然可以不释放，后面可以连续调用start；但不释放时系统或浏览器会一直提示在录音，最佳操作是录完就close掉
+          this.rec = null
+        })
+      },
       formatFriendTime (item) {
         return friendTime(item)
       },
       //是本人
       isSelf (item) {
-        return item.sendMemIdentityId === '513030199411243122'
+        return item.sendMemIdentityId === this.loginUserInfo.identityId
       },
       notNull (obj) {
         return isNotNull(obj)
@@ -556,13 +593,14 @@
       replayMsg (item) {
         // 回复私信
       },
-      windowopen(url, id) {
+      windowopen (url, id) {
         window.open(url)
         // this.updateRead(id)
       },
-      preViewIm(){},
+      preViewIm () {
+      },
       //是否显示分割线
-      showSpitLine(fileIndex, files) {
+      showSpitLine (fileIndex, files) {
         var showspit = false
         files.filter(item => item.imgs.length > 0).forEach((f, index) => {
           if (files[fileIndex] === f && index > 0) showspit = true
@@ -570,12 +608,15 @@
         return showspit
       },
 
-      showSeeFileDetailDialo(imgs, item) {
+      showSeeFileDetailDialo (imgs, item) {
         if (imgs[0] instanceof Object) { //这种集合 {Location :'图片地址 ', name:'文件名'
           this.SeeFileDetailList = imgs
         } else { //纯文件地址
           this.SeeFileDetailList = imgs.map((item, index) => {  //组合一个对象  在组件中用
-            return {Location: item, name: '材料' + (index + 1)}
+            return {
+              Location: item,
+              name: '材料' + (index + 1)
+            }
           })
         }
         // this.$refs.seeFileDetailDialog.openDialog()

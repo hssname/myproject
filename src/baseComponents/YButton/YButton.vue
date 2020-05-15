@@ -71,6 +71,9 @@
      // width: 25%;
       width: 24%;
     }
+    &.min{
+      width: 15%;
+    }
     &.primary {
       color: #fff;
       background-color: #409eff;

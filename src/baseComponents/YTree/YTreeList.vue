@@ -2,17 +2,17 @@
     <transition name="fade">
         <li class="item" v-if="item">
             <div v-if="item.branch" class="branch" @click="nodeClick(item)">
-                    <span>{{ item.dossierName }}</span>
-                    <span style="font-size: 28px;" class="iconfont icon" :class="[item.open ? 'icon-jiantou_up': 'icon-jiantou_down']"></span>
+                    <span>{{ item.name }}</span>
+                    <span v-if="item.avator" style="font-size: 28px;" class="iconfont icon" :class="[item.open ? 'icon-jiantou_up': 'icon-jiantou_down']"></span>
             </div>
             <div v-else class="member" @click="selectItem(item)">
                 <div class="content">
-                    <img :src="item.avator || imgUrl" alt="">
-                    <span>{{item.fileName}}</span>
+                    <img v-if="item.avator" :src="item.avator || imgUrl" alt="">
+                    <span>{{item.childName}}</span>
                 </div>
-                <span class="iconfont icon-arrow-right icon"></span>
+                <span v-if="item.avator" class="iconfont icon-arrow-right icon"></span>
             </div>
-            <tree-list v-show="item.open" v-for="(child, index) in item.children" :key="index" :item="child" @nodeClick="outClick" @selectItem="outSelectItem"></tree-list>
+            <tree-list v-show="item.open" v-for="(child, index) in item.children" :key="index" :item="child" :index="index" @nodeClick="outClick" @selectItem="outSelectItem"></tree-list>
         </li>
     </transition>
 </template>
@@ -23,7 +23,7 @@
         props: {
             item: {
                 type: [Object, Array]
-            }
+            },
         },
         data () {
             return {
@@ -34,12 +34,12 @@
         methods: {
             nodeClick (item) {
                 item.open = !item.open;
-                if (item.request) return;
-                item.request = true;
+                // if (item.request) return;
+                // item.request = true;
                 this.$emit('nodeClick', item);
             },
             selectItem(item){
-                console.log(item, '选中的')
+              this.$emit('selectItem', item);
             },
             outClick (item) {
                 this.$emit('nodeClick', item);
@@ -47,21 +47,22 @@
             outSelectItem (item) {
                 this.$emit('selectItem', item);
             }
-        }
+        },
     }
 </script>
 
 <style lang="scss" scoped>
-    fade-enter-active, .fade-leave-active {
+   /* fade-enter-active, .fade-leave-active {
         transition: opacity .5s;
     }
-    .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    .fade-enter, .fade-leave-to !* .fade-leave-active below version 2.1.8 *! {
         opacity: 0;
-    }
+    }*/
     .item {
         padding-left: 15px;
         list-style: none;
         background-color: #fff;
+        cursor: pointer;
         .branch {
             display: flex;
             justify-content: space-between;
@@ -123,7 +124,7 @@
                 }
                 span{
                     display: block;
-                    margin-left: 15px;
+                    /*margin-left: 15px;*/
                 }
             }
         }

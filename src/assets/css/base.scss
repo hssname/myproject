@@ -3,6 +3,7 @@ html, body, div, ul, li, h1, h2, h3, h4, h5, h6, p, dl, dt, dd, ol, form, input,
   padding: 0;
 }
 
+
 *{box-sizing: border-box;}
 
 html, body {
@@ -15,7 +16,7 @@ body {
   color:#333;
 }
 h1, h2, h3, h4, h5, h6{font-weight:normal;}
-ul,ol {
+ul,ol,li {
   list-style: none;
 }
 
@@ -118,8 +119,12 @@ html, body {
 .padding-10 {
   padding: 10px;
 }
+
 .padding-15 {
   padding: 15px;
+}
+.padding-20 {
+  padding: 20px;
 }
 .padding-lr-5 {
   padding-left: 5px;
@@ -235,7 +240,9 @@ html, body {
 }
 
 /*margin布局*/
-
+.margin-auto{
+  margin: 0 auto;
+}
 .margin-15 {
   margin: 15px;
 }
@@ -316,6 +323,9 @@ html, body {
 .margin-r-20 {
   margin-right: 20px;
 }
+.margin-r-30 {
+  margin-right: 20px;
+}
 .margin-tb-0 {
   margin-top: 0px;
   margin-bottom: 0px;
@@ -335,13 +345,21 @@ html, body {
 
 /* line-height 行高*/
 
-.line_height_20 {
+.line_height_20px {
   line-height: 20px;
 }
-.line_height_30 {
+.line_height_30px {
   line-height: 30px;
 }
-
+.line_height_18{
+  line-height: 1.8;
+}
+.line_height_15{
+  line-height: 1.5;
+}
+.line_height_20{
+  line-height: 2.0;
+}
 /* width宽度 */
 
 .width_20px {
@@ -397,6 +415,9 @@ html, body {
 .height_45px {
   height: 45px;
 }
+.height_200px {
+  height: 200px;
+}
 .height_300px {
   height: 300px;
 }
@@ -433,6 +454,9 @@ html, body {
 }
 .color-blue_108ee9 {
   color: #108ee9;
+}
+.color-cc99cd {
+  color: #cc99cd;
 }
 
 /* font */
@@ -514,11 +538,21 @@ html, body {
  }
 
 /*border 边框*/
+.box-shadow{
+  box-shadow: 0 1px 3px rgba(26,26,26,.1);
+}
+.box-shadow_blue{
+  box-shadow: 0px 3px 15px -5px rgba(64, 158, 255, 0.6);
+}
+
 .border_radius_2 {
   border-radius: 2px;
 }
 .border_radius_5 {
   border-radius: 5px;
+}
+.border_radius_20 {
+  border-radius: 20px;
 }
 .border_radius_100 {
   border-radius: 100px;
@@ -534,6 +568,9 @@ html, body {
 }
 .border-left_1_gray {
   border-left: #eeeeee 1px solid
+}
+.border-right_1_gray {
+  border-right: #eeeeee 1px solid
 }
 
 /* 滚动*/
@@ -648,4 +685,24 @@ html, body {
   margin-top: -10px;
   border: 10px solid transparent;
   border-right-color: white
+}
+
+.language-css {
+  position: relative;
+  background-color: #282c34;
+  border-radius: 6px;
+}
+.language-css:before {
+  content: 'css';
+  position: absolute;
+  z-index: 3;
+  top: .8em;
+  right: 1em;
+  font-size: .75rem;
+  color: hsla(0, 0%, 100%, .4);
+}
+.theme{
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 2rem 2.5rem;
 }

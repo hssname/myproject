@@ -2,7 +2,23 @@
 export default [
   {
     path: '/',
-    redirect: '/index'
+    redirect: '/Introduce'
+  },
+  {
+    path: '/Introduce',
+    name: 'Introduce',
+    component: () => import(/* webpackChunkName: "Introduce" */ '../../views/Introduce.vue'),
+    meta: {
+      title: 'web前端资源'
+    }
+  },
+  {
+    path: '/doc',
+    name: 'doc',
+    component: () => import(/* webpackChunkName: "doc" */ '../../views/doc.vue'),
+    meta: {
+      title: 'web前端资源'
+    }
   },
   {
     path: '/index',
