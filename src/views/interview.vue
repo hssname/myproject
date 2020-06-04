@@ -1,9 +1,9 @@
 <template>
-  <div class="main overflow margin-t-35 contain">
+  <div class="main overflow margin-t-35 contain line_height_20">
     <div v-for="(item, index) in showListDate" :key="index">
-      <div class="color-33">{{index + 1}}.{{item.title}}</div>
-      <div class="color-66 font-14 line_height_20" style="text-indent: 2em">{{item.content}}</div>
-      <div class="color-66 font-14 line_height_20" style="text-indent: 2em">{{item.desc}}</div>
+      <div class="color-33 font-18 padding-tb-20">{{index + 1}}. {{item.title}}</div>
+      <div class="color-66 font-14" style="text-indent: 2em">{{item.content}}</div>
+      <div class="color-66 font-14" style="text-indent: 2em">{{item.desc}}</div>
       <div v-if="item.children && item.children.length">
         <div style="text-indent: 1em" v-for="(child,childIndex) in item.children" :key="childIndex">
           <div class="color-red padding-tb-10" v-if="child.question">({{childIndex + 1}}) {{child.question}}</div>
@@ -69,7 +69,7 @@
       }
     },
     mounted () {
-      this.$route.query.name === '面试题' ? this.listDate = JavaScriptFunc : this.listDate = interview
+      this.$route.query.name === '面试题' ? this.listDate = JavaScriptFunc : this.showListDate = interview
       if (this.$route.query.name === '面试题') {
         this.arrSlice(this.listDate, this.pageSize)
         this.showListDate = this.handListDate[0]
