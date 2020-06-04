@@ -13,7 +13,7 @@
           </div>
         </div>
         <div class="flex-4 height100 overflow list-con">
-            <doc-template :activteName="activteName" @scroll="onScroll"></doc-template>
+            <doc-template :activteName="activteName"></doc-template>
         </div>
     </div>
   </div>
@@ -35,10 +35,21 @@
     methods: {
       toggle (item) {
         if(item.name === '作者笔记' || item.name === '资源收藏' || item.name === '关于') return this.activteName = '移动端适配'
+        if (item.name=== '常见面试' || item.name=== '面试技巧' || item.name=== '面试题'){
+          return this.$router.push({ path: '/interview', query: { name: item.name } })
+        }
         this.activteName = item.name
       },
       selectItem (item) {
-        console.log(item,'selectItem')
+       /* let anchor = this.$el.querySelector(`#link_${item.id}`)
+        console.log(anchor.offsetTop, 'anchor.offsetTop')
+        document.body.scrollTop = anchor.offsetTop*/
+       /* let jump =  document.querySelector(`#link_${item.id}`)
+        jump.scrollIntoView(true)*/
+        document.querySelector(`#link_${item.id}`).scrollIntoView({
+          behavior: "smooth"
+        });
+       /* console.log(item,'selectItem')
         let jump = document.querySelectorAll('.d_jump')
         console.log(jump, 'd_jump')
         // 获取需要滚动的距离
@@ -76,18 +87,18 @@
             document.body.scrollTop = total;
             document.documentElement.scrollTop = total*0.68;
           }
-        }
+        }*/
         // document.querySelector(`#name${item.id}`).scrollIntoView(true)
       },
-      onScroll(e){
+     /* onScroll(e){
         let scrolled = document.documentElement.scrollTop || document.body.scrollTop
         console.log(scrolled, 'scrolled')
-      },
+      },*/
     },
     mounted(){
-      this.$nextTick(function () {
+     /* this.$nextTick(function () {
         window.addEventListener('scroll', this.onScroll)
-      })
+      })*/
     },
     created () {
       this.menuList = menuList

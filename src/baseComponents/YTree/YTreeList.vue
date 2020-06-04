@@ -2,13 +2,13 @@
     <transition name="fade">
         <li class="item" v-if="item">
             <div v-if="item.branch" class="branch" @click="nodeClick(item)">
-                    <span>{{ item.name }}</span>
+                    <span :id="`link_${item.id}`">{{ item.name }}</span>
                     <span v-if="item.avator" style="font-size: 28px;" class="iconfont icon" :class="[item.open ? 'icon-jiantou_up': 'icon-jiantou_down']"></span>
             </div>
             <div v-else class="member" @click="selectItem(item)">
                 <div class="content">
                     <img v-if="item.avator" :src="item.avator || imgUrl" alt="">
-                    <span>{{item.childName}}</span>
+                    <span :id="`link_${item.id}`">{{item.childName}}</span>
                 </div>
                 <span v-if="item.avator" class="iconfont icon-arrow-right icon"></span>
             </div>

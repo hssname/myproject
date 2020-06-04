@@ -21,6 +21,14 @@ export default [
     }
   },
   {
+    path: '/interview',
+    name: 'interview',
+    component: () => import(/* webpackChunkName: "interview" */ '../../views/interview.vue'),
+    meta: {
+      title: 'web前端资源'
+    }
+  },
+  {
     path: '/index',
     name: 'index',
     component: () => import(/* webpackChunkName: "index" */ '../../views/index.vue'),

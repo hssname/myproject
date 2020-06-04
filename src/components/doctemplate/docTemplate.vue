@@ -5,7 +5,7 @@
         <div v-if="child.name === activteName">
           <h2 class="margin-b-35 color-00 font-40 ">{{child.name}}</h2>
           <div class="contain" v-for="(v,i) in child.children" :key="i">
-            <h3 class="border_bottom_1 color-00 d_jump" :id="`name${i}`">{{v.name}}</h3>
+            <h3 class="border_bottom_1 color-00" :id="`link_${v.id}`">{{v.name}}</h3>
             <ul v-if="v.list&&v.list.length" class="padding-tb-20">
               <li class="li" v-for="(list,li) in v.list" :key="li">
                 <a :class="[notNull(list.url) ?'color-blue_108ee9': '']" :href="list.url" :target="notNull(list.url) ?'_blank': '_self'">{{list.name}}</a>
