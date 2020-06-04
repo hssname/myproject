@@ -1477,32 +1477,32 @@ export const JavaScriptFunc = [
     children: [
       {
         title: '一个页面的脚本如下，请问会打印出什么内容？',
-        list: ['../assets/images/question/questionOne.png'],
+        list: [require("../assets/images/question/questionOne.png")],
       },
       {
         title: '一个页面的脚本如下，请问会打印出什么内容？',
-        list: ['../assets/images/question/questionTwo.png'],
+        list: [require('../assets/images/question/questionTwo.png')],
       },
       {
         title: '一个页面的脚本如下，请问会打印出什么内容？',
-        list: ['../assets/images/question/questionThree_1.png','../assets/images/question/questionThree_2.png'],
+        list: [require('../assets/images/question/questionThree_1.png'),require('../assets/images/question/questionThree_2.png')],
       },
       {
         title: '一个页面的脚本如下，请问会打印出什么内容？',
-        list: ['../assets/images/question/questionFour_1.png','../assets/images/question/questionFour_2.png'],
+        list: [require('../assets/images/question/questionFour_1.png'),require('../assets/images/question/questionFour_2.png')],
       },
       {
         title: 'Function.prototype.apply方法和Function.prototype.call方法有什么区别？',
-        list: ['../assets/images/question/questionFive_1.png','../assets/images/question/questionFive_2.png'],
+        list: [require('../assets/images/question/questionFive_1.png'),require('../assets/images/question/questionFive_2.png')],
         action: 'cal()和apply()的区别： 只是临时调用一次函数，临时替换一次this: call或apply。 call从第二个参数开始的实参值传给正在调用的函数的形参变量，apply第二个保存多个实参值的数组，先打散！再按顺序逐个传给正在调用的函数的形参变量。'
       },
       {
         title: '在浏览器中运行以下脚本，点击页面后，会打印出 false。请问为什么会打印出 false？',
-        list: ['../assets/images/question/questionSix_1.png','../assets/images/question/questionSix_2.png'],
+        list: [require('../assets/images/question/questionSix_1.png'),require('../assets/images/question/questionSix_2.png')],
       },
       {
         title: '如何更正上面的脚本，使得点击页面时能够打印出true？',
-        list: ['../assets/images/question/questionSevent_1.png','../assets/images/question/questionSevent_2.png','../assets/images/question/questionSevent_3.png'],
+        list: [require('../assets/images/question/questionSevent_1.png'),require('../assets/images/question/questionSevent_2.png'),require('../assets/images/question/questionSevent_3.png')],
       },
     ]
   },
@@ -1512,23 +1512,23 @@ export const JavaScriptFunc = [
     children: [
       {
         title: '1. 标识符与变量的区别是什么？',
-        list: ['../../assets/images/question/questionEight_1.png'],
+        list: [require('../assets/images/question/questionEight_1.png')],
       },
       {
         title: '什么是执行上下文？',
-        list: ['../assets/images/question/questionNight.png'],
+        list: [require('../assets/images/question/questionNight.png')],
       },
       {
         title: '什么是执行栈/调用栈',
-        list: ['../assets/images/question/questionTen_1.png','../assets/images/question/questionTen_2.png','../assets/images/question/questionTen_3.png'],
+        list: [require('../assets/images/question/questionTen_1.png'),require('../assets/images/question/questionTen_2.png'),require('../assets/images/question/questionTen_3.png')],
       },
       {
         title: '什么是词法作用域？',
-        list: ['../assets/images/question/question11.png'],
+        list: [require('../assets/images/question/question11.png')],
       },
       {
         title: '闭包 (closure) 是什么？',
-        list: ['../assets/images/question/question12.png','../assets/images/question/question12_1.png','../assets/images/question/question12_2.png','../assets/images/question/question12_3.png','../assets/images/question/question12_4.png'],
+        list: [require('../assets/images/question/question12.png'),require('../assets/images/question/question12_1.png'),require('../assets/images/question/question12_2.png'),require('../assets/images/question/question12_3.png'),require('../assets/images/question/question12_4.png')],
       },
     ]
   },
@@ -1538,27 +1538,27 @@ export const JavaScriptFunc = [
     children: [
       {
         title: '一个页面的脚本如下，请问会打印出什么内容？为什么？',
-        list: ['../assets/images/question/question13_1.png','../assets/images/question/question13_2.png','../assets/images/question/question13_3.png'],
+        list: [require('../assets/images/question/question13_1.png'),require('../assets/images/question/question13_2.png'),require('../assets/images/question/question13_3.png')],
       },
       {
         title: '一个页面的脚本如下，请问会打印出什么内容？为什么？',
-        list: ['../assets/images/question/question14_1.png','../assets/images/question/question14_2.png'],
+        list: [require('../assets/images/question/question14_1.png'),require('../assets/images/question/question14_2.png')],
       },
       {
         title: '一个页面的脚本如下，请问会打印出什么内容？为什么？',
-        list: ['../assets/images/question/question15_1.png','../assets/images/question/question15_2.png','../assets/images/question/question15_3.png','../assets/images/question/question15_4.png'],
+        list: [require('../assets/images/question/question15_1.png'),require('../assets/images/question/question15_2.png'),require('../assets/images/question/question15_3.png'),require('../assets/images/question/question15_4.png')],
       },
       {
         title: '如何判断一个数据的类型？',
-        list: ['../assets/images/question/question16_1.png','../assets/images/question/question16_2.png','../assets/images/question/question16_3.png'],
+        list: [require('../assets/images/question/question16_1.png'),require('../assets/images/question/question16_2.png'),require('../assets/images/question/question16_3.png')],
       }, // 16
       {
         title: '一个页面的脚本如下，请问会打印出什么内容？',
-        list: ['../assets/images/question/question17.png',], // 17
+        list: [require('../assets/images/question/question17.png')], // 17
       },
       {
         title: '原型链的终点是什么？如何打印出原型链的终点？',
-        list: ['../assets/images/question/question18_1.png','../assets/images/question/question18_2.png'],
+        list: [require('../assets/images/question/question18_1.png'),require('../assets/images/question/question18_2.png')],
       },
     ]
   },
@@ -1568,26 +1568,26 @@ export const JavaScriptFunc = [
     children: [
       {
         title: '一个页面的脚本如下，请问会打印出什么内容？为什么？',
-        list: ['../assets/images/question/question19_1.png','../assets/images/question/question19_2.png','../assets/images/question/question19_3.png',
-          '../assets/images/question/question19_4.png','../assets/images/question/question19_5.png','../assets/images/question/question19_6.png',
-          '../assets/images/question/question19_7.png',
+        list: [require('../assets/images/question/question19_1.png'),require('../assets/images/question/question19_2.png'),require('../assets/images/question/question19_3.png'),
+          require('../assets/images/question/question19_4.png'),require('../assets/images/question/question19_5.png'),require('../assets/images/question/question19_6.png'),
+          require('../assets/images/question/question19_7.png')
         ],
       },
       {
         title: '在浏览器中运行这段 JavaScript 代码，请问会打印出什么内容？？',
-        list: ['../assets/images/question/question20_1.png','../assets/images/question/question20_2.png',],
+        list: [require('../assets/images/question/question20_1.png'),require('../assets/images/question/question20_2.png')],
       },
       {
         title: '如何修复第 2 题中的代码，使得其可以打印出 0,1,2,3,4？',
-        list: ['../assets/images/question/question21_1.png','../assets/images/question/question21_2.png'],
+        list: [require('../assets/images/question/question21_1.png'),require('../assets/images/question/question21_2.png')],
       },
       {
         title: '一个页面的脚本如下，请问会打印出什么内容？为什么？',
-        list: ['../assets/images/question/question22_1.png','../assets/images/question/question22_2.png'],
+        list: [require('../assets/images/question/question22_1.png'),require('../assets/images/question/question22_2.png')],
       },
       {
         title: '一个页面的脚本如下，请问会打印出什么内容？为什么？',
-        list: ['../assets/images/question/question23_1.png','../assets/images/question/question23_2.png','../assets/images/question/question23_3.png'],
+        list: [require('../assets/images/question/question23_1.png'),require('../assets/images/question/question23_2.png'),require('../assets/images/question/question23_3.png')],
       },
     ]
   },
@@ -1597,33 +1597,33 @@ export const JavaScriptFunc = [
     children: [
       {
         title: '在 JavaScript 的字符串与正则表达式操作中，test、exec、 match 这三个方法的用法是什么，正则表达式中的括号在这三个方法中的作用分别是什么？',
-        list: ['../assets/images/question/question24_1.png','../assets/images/question/question24_2.png','../assets/images/question/question24_3.png',
-          '../assets/images/question/question24_4.png','../assets/images/question/question24_5.png','../assets/images/question/question24_6.png',
+        list: [require('../assets/images/question/question24_1.png'),require('../assets/images/question/question24_2.png'),require('../assets/images/question/question24_3.png'),
+          require('../assets/images/question/question24_4.png'),require('../assets/images/question/question24_5.png'),require('../assets/images/question/question24_6.png'),
         ],
       },
       {
         title: '请写出一个正则表达式，支持匹配如下三种日期格式？',
-        list: ['../assets/images/question/question25_1.png','../assets/images/question/question25_2.png'],
+        list: [require('../assets/images/question/question25_1.png'),require('../assets/images/question/question25_2.png')],
       },
       {
         title: '这个表达式的结果是什么，为什么？',
-        list: ['../assets/images/question/question26_1.png','../assets/images/question/question26_2.png'],
+        list: [require('../assets/images/question/question26_1.png'),require('../assets/images/question/question26_2.png')],
       },
       {
         title: '请写一段代码，计算一个 html 文档标签个数(开始和结束标签算两个)，要求使用到正则表达式匹配。例如',
-        list: ['../assets/images/question/question27_1.png','../assets/images/question/question27_2.png',],
+        list: [require('../assets/images/question/question27_1.png'),require('../assets/images/question/question27_2.png')],
       },
       {
         title: '写一个函数，将驼峰字符串转换成-分割字符串',
-        list: ['../assets/images/question/question28.png'],
+        list: [require('../assets/images/question/question28.png')],
       },
       {
         title: '请问下面代码会打印出什么？',
-        list: ['../assets/images/question/question29_1.png','../assets/images/question/question29_2.png','../assets/images/question/question29_3.png',],
+        list: [require('../assets/images/question/question29_1.png'),require('../assets/images/question/question29_2.png'),require('../assets/images/question/question29_3.png')],
       },
       {
         title: '如何给数字加上千分位分隔符？',
-        list: ['../assets/images/question/question30_1.png','../assets/images/question/question30_2.png','../assets/images/question/question30_3.png','../assets/images/question/question30_4.png',],
+        list: [require('../assets/images/question/question30_1.png'),require('../assets/images/question/question30_2.png'),require('../assets/images/question/question30_3.png'),require('../assets/images/question/question30_4.png')],
       },
     ]
   },
@@ -1633,28 +1633,28 @@ export const JavaScriptFunc = [
     children: [
       {
         title: 'JavaScript 中有几种基本类型数据？请再列举几个引用对象。',
-        list: ['../assets/images/question/question31.png',],
+        list: [require('../assets/images/question/question31.png')],
       },
       {
         title: '请说一下JavaScript中的typeof操作符的用法？',
-        list: ['../assets/images/question/question32_1.png','../assets/images/question/question32_2.png'],
+        list: [require('../assets/images/question/question32_1.png'),require('../assets/images/question/question32_2.png')],
       },
       {
         title: '什么是 JavaScript 中的包装类型',
-        list: ['../assets/images/question/question33_1.png','../assets/images/question/question33_2.png'],
+        list: [require('../assets/images/question/question33_1.png'),require('../assets/images/question/question33_2.png')],
       },
       {
         title: '如何使用Object.prototype.toString来判断值的类型，为什么使用它可以判断值的类型',
-        list: ['../assets/images/question/question34_1.png','../assets/images/question/question34_2.png',],
+        list: [require('../assets/images/question/question34_1.png'),require('../assets/images/question/question34_2.png')],
       },
       {
         title: ' JavaScript 中如何进行显式类型转换？',
-        list: ['../assets/images/question/question35_1.png','../assets/images/question/question35_2.png','../assets/images/question/question35_3.png'],
+        list: [require('../assets/images/question/question35_1.png'),require('../assets/images/question/question35_2.png'),require('../assets/images/question/question35_3.png')],
       },
       {
         title: ' JavaScript 中如何进行隐式类型转换？',
-        list: ['../assets/images/question/question36_1.png','../assets/images/question/question36_2.png','../assets/images/question/question36_3.png',
-          '../assets/images/question/question36_4.png','../assets/images/question/question36_5.png',
+        list: [require('../assets/images/question/question36_1.png'),require('../assets/images/question/question36_2.png'),require('../assets/images/question/question36_3.png'),
+          require('../assets/images/question/question36_4.png'),require('../assets/images/question/question36_5.png'),
         ],
       },
     ]
@@ -1665,35 +1665,35 @@ export const JavaScriptFunc = [
     children: [
       {
         title: ' 说一下你对 generator 函数的理解。',
-        list: ['../assets/images/question/question37.png'],
+        list: [require('../assets/images/question/question37.png')],
       },
       {
         title: 'escape，encodeRUI和encodeURIComponent有什么区别？',
-        list: ['../assets/images/question/question38.png'],
+        list: [require('../assets/images/question/question38.png')],
       },
       {
         title: '一个页面的脚本如下，请问会打印出什么内容？为什么？',
-        list: ['../assets/images/question/question39.png'],
+        list: [require('../assets/images/question/question39.png')],
       },
       {
         title: '写一个立即执行函数 (IIFE) ',
-        list: ['../assets/images/question/question40.png'],
+        list: [require('../assets/images/question/question40.png')],
       },
       {
         title: ' 如何理解”函数在 JavaScript 中是第一公民 (first-class) “这句话？',
-        list: ['../assets/images/question/question41.png'],
+        list: [require('../assets/images/question/question41.png')],
       },
       {
         title: '为什么函数的 arguments 参数是类数组而不是数组？如何遍历类数组?',
-        list: ['../assets/images/question/question42_1.png','../assets/images/question/question42_2.png'],
+        list: [require('../assets/images/question/question42_1.png'),require('../assets/images/question/question42_2.png')],
       },
       {
         title: '一个页面的脚本如下，请问会打印出什么内容?',
-        list: ['../assets/images/question/question43_1.png','../assets/images/question/question43_2.png',],
+        list: [require('../assets/images/question/question43_1.png'),require('../assets/images/question/question43_2.png')],
       },
       {
         title: '一个页面的脚本如下，请问会打印出什么内容?',
-        list: ['../assets/images/question/question44.png',],
+        list: [require('../assets/images/question/question44.png')],
       },
     ]
   },
@@ -1703,11 +1703,11 @@ export const JavaScriptFunc = [
     children: [
       {
         title: '什么是同源策略，其作用是什么？',
-        list: ['../assets/images/question/question45_1.png','../assets/images/question/question45_2.png','../assets/images/question/question45_3.png',],
+        list: [require('../assets/images/question/question45_1.png'),require('../assets/images/question/question45_2.png'),require('../assets/images/question/question45_3.png')],
       },
       {
         title: 'JSONP 请求是 Ajax 请求吗？请描述 JSONP 技术的原理？',
-        list: ['../assets/images/question/question46_1.png','../assets/images/question/question46_2.png','../assets/images/question/question46_3.png','../assets/images/question/question46_4.png'],
+        list: [require('../assets/images/question/question46_1.png'),require('../assets/images/question/question46_2.png'),require('../assets/images/question/question46_3.png'),require('../assets/images/question/question46_4.png')],
       },
     ]
   },
