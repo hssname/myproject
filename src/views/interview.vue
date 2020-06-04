@@ -3,7 +3,7 @@
     <div v-for="(item, index) in showListDate" :key="index">
       <div class="color-33 font-18 padding-tb-20">{{index + 1}}. {{item.title}}</div>
       <div class="color-66 font-14" style="text-indent: 2em">{{item.content}}</div>
-      <div class="color-66 font-14" style="text-indent: 2em">{{item.desc}}</div>
+      <div class="color-66 font-14" style="text-indent: 2em" :class="item.title && item.desc ? 'color-blue_108ee9 font-16' : ''">{{item.desc}}</div>
       <div v-if="item.children && item.children.length">
         <div style="text-indent: 1em" v-for="(child,childIndex) in item.children" :key="childIndex">
           <div class="color-red padding-tb-10" v-if="child.question">({{childIndex + 1}}) {{child.question}}</div>

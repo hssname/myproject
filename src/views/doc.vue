@@ -38,6 +38,12 @@
         if (item.name=== '常见面试' || item.name=== '面试技巧' || item.name=== '面试题'){
           return this.$router.push({ path: '/interview', query: { name: item.name } })
         }
+        if (item.name=== '常见面试' || item.name=== '面试技巧' || item.name=== '面试题'){
+          return this.$router.push({ path: '/interview', query: { name: item.name } })
+        }
+        if (item.name=== '电子签名'){
+          return this.$router.push({ path: '/signature' })
+        }
         this.activteName = item.name
       },
       selectItem (item) {

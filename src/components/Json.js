@@ -172,7 +172,7 @@ export const menuList = [
     open: true,
     name: '常见面试',
     id: 101,
-    children: [
+    /*children: [
       {
         branch: true,
         open: false,
@@ -185,7 +185,14 @@ export const menuList = [
         name: '面试题',
         id: 103,
       },
-    ],
+    ],*/
+  },
+  {
+    request: false,
+    branch: true,
+    open: true,
+    name: '电子签名',
+    id: 104,
   },
   {
     request: false,
@@ -1361,7 +1368,8 @@ export const contentList = [
 export const interview = [
   {
     title: '面试注意事项及心态管理',
-    content: '这一节我会给大家介绍一些在面试中需要注意的事情。'
+    content: '这一节我会给大家介绍一些在面试中需要注意的事情。',
+    desc: '人要有毅力，否则将一事无成。 ——居里夫人'
   },
   {
     title: '要做到对自己的简历倒背如流',

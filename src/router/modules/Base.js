@@ -29,6 +29,14 @@ export default [
     }
   },
   {
+    path: '/signature',
+    name: 'signature',
+    component: () => import(/* webpackChunkName: "signature" */ '../../views/signature.vue'),
+    meta: {
+      title: '电子签名'
+    }
+  },
+  {
     path: '/index',
     name: 'index',
     component: () => import(/* webpackChunkName: "index" */ '../../views/index.vue'),
